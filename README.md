@@ -1,1 +1,3 @@
-# My Neovim Configuration
+# NeoVim Configuration
+
+Derived from NvChad
