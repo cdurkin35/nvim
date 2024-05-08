@@ -72,20 +72,6 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end
   },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    },
-    config = function()
-      require("chatgpt").setup({
-        api_key_cmd = "echo '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'",
-      })
-    end,
-  }
 }
 
 return plugins
