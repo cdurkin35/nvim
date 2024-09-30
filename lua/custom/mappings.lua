@@ -3,8 +3,15 @@ local M = {}
 M.dap = {
   plugin = true,
   n = {
-    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
-  }
+    ["<leader>db"] = {
+        "<cmd> DapToggleBreakpoint <CR>",
+        "Add Breakpoint at line"
+    },
+    ["<leader>dr"] = {
+        "<cmd> DapContinue <CR>",
+        "Run or continue the debugger"
+    }
+  },
 }
 
 M.dap_python = {

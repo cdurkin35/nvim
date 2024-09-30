@@ -1,11 +1,12 @@
 local plugins = {
   {
     "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
-      dapui.setup()
+      require("dapui").setup()
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
       end
@@ -20,6 +21,7 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function(_, opts)
+      require("custom.configs.dap")
       require("core.utils").load_mappings("dap")
     end
   },
@@ -55,6 +57,10 @@ local plugins = {
         "clangd",
         "clang-format",
         "rust-analyzer",
+        "typescript-language-server",
+        "eslint-lsp",
+        "prettier",
+        "js-debug-adapter",
      },
     },
   },
