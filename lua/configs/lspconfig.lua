@@ -14,13 +14,13 @@ lspconfig.servers = {
     "clangd",
     "pyright",
     "rust_analyzer",
-    "vhdl_ls",
+    "jdtls",
 }
 
 -- list of servers configured with default config
 local default_servers = {
     "pyright",
-    "vhdl_ls",
+    "jdtls",
 }
 
 for _, lsp in ipairs(default_servers) do
@@ -41,6 +41,10 @@ lspconfig.rust_analyzer.setup({
         ["rust-analyzer"] = {
             cargo = {
                 allFeatures = true,
+                -- target = "thumbv7em-none-eabihf",
+            },
+            check = {
+                allTargets = false,
             },
         },
     },
